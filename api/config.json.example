@@ -1,0 +1,28 @@
+{
+    "beanstalk": {
+        "host": "127.0.0.1",
+        "port": 11300
+    },
+    "mysql": {
+        "host": "mysql",
+        "port": 3306,
+        "database": "makers",
+        "user": "db_user",
+        "password": "db_passwd",
+        "concurrency": 10
+    },
+    "processes": {
+        "api": 2
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": 6379
+    },
+    "userCookiePassword": "whocares?",
+    "userSessionLimit": 86400,
+    "users": {
+        "auto_admin": {
+            "password": "sha256_password_hash"
+        }
+    }
+}
