@@ -2,14 +2,23 @@
 
 version: "3.2"
 services:
-  mysql8:
-    image: mysql:8
-    container_name: mysql8
+  mysql5:
+    image: mysql:5
+    container_name: mysql5
     volumes:
       - ./data/mysql/config:/etc/mysql/
       - ./data/mysql/data/:/var/lib/mysql
     ports:
       - "3306:3306/tcp"
-
-# vim:ft=docker:et:ts=2:sw=2:sts=2:
+  api:
+    build: api/.
+    container_name: api
+    depends_on:
+      - mysql5
+    volumes:
+      - ./api/app:/app
+    links:
+      - mysql5
+    ports:
+      - "3000:3000/tcp"
 
