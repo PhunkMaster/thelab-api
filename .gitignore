@@ -1,2 +1,4 @@
 data/*
-api/config.json
+api/app/config.json
+api/app/node_modules/*
+api/app/package-lock.json
